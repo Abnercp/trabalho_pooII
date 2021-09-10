@@ -10,3 +10,12 @@ interface IEndereco {
     bairro: string;
     cidade: string;
 }
+
+let endereco: IEndereco
+endereco = {
+    rua: '1052',
+    numero: 209,
+    bairro: "Volta Grande",
+    cidade: "Volta Redonda"
+}
+console.log("Arquivos:", endereco)
