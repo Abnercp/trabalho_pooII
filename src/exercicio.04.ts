@@ -39,7 +39,7 @@ class Imposto {
         }
 
         set rendaAnual(rendaAnual: number){
-            if(rendaAnual == 0){
+            if(rendaAnual <= 0){
                 throw new Error("Renda Invalida")
             }
             this._rendaAnual = rendaAnual
@@ -63,25 +63,13 @@ class PFisica extends Imposto{
     }
 
     set gastosSaude(gastosSaude: number){
-        if(gastosSaude < 0){
+        if(gastosSaude <= 0){
             throw new Error("Gasto Invalido")
         }
         this._gastosSaude = gastosSaude
     }
 
     impostoCalculo(){
-        // if(this.gastosSaude == 0){
-        //     console.log("Voce nao teve gastos com saude")
-        // } else {
-        //     this.gastosSaude * 0.05
-        // }
-        
-        // if(this.rendaAnual < 20000){
-        //     this.rendaAnual * 0.15 
-        // } else {
-        //     this.rendaAnual * 0.25
-        // }
-
         var irf = this.rendaAnual*(this.rendaAnual < 20000 ? 0.15 : 0.25)
         var saudeDesc = this.gastosSaude*(this.gastosSaude != 0 ? 0.5 : 0)
         return irf - saudeDesc
@@ -107,7 +95,7 @@ class PJuridica extends Imposto{
     }
 
     set numeroFuncionarios(numeroFuncionarios: number){
-        if(numeroFuncionarios == 0){
+        if(numeroFuncionarios <= 0){
             throw new Error("Quantidade Invalida")
         }
         this._numeroFuncionarios = numeroFuncionarios
