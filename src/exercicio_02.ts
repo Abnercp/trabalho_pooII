@@ -48,19 +48,19 @@ class Veiculos {
         this._marca = marca
     }
     set ano(ano: number){
-        if(ano == 0) {
+        if(ano <= 0) {
             throw new Error("Ano inaceitavel")
         }
         this._ano = ano
     }
     set valorLocacao(valorLocacao: number){
-        if(valorLocacao == 0) {
+        if(valorLocacao <= 0) {
             throw new Error("Valor da Locacao inaceitavel")
         }
         this._valorLocacao = valorLocacao
     }
     set quantidadeDias(quantidadeDias: number){
-        if(quantidadeDias == 0) {
+        if(quantidadeDias <= 0) {
             throw new Error("Quantidade de Dias inaceitavel")
         }
         this._quantidadeDias = quantidadeDias
