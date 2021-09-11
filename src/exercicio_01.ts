@@ -25,7 +25,7 @@ class Pessoa {
     }
 
     set nome(nome: string){
-        if(nome.length == 0){
+        if(nome = ''){
             throw new Error("Nome Inválido")
         }
         this._nome = nome
@@ -40,7 +40,7 @@ class Pessoa {
     }
 
     set idade(idade: number){
-        if(idade == 0){
+        if(idade <= 0){
             throw new Error("Idade Inválida")
         }
         this._idade = idade
