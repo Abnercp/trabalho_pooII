@@ -29,14 +29,14 @@ class Vendedores {
     }
 
     set salario(salario: number){
-        if(salario == 0){
+        if(salario <= 0){
             throw new Error("Salario invalido")
         }
         this._salario = salario
     }
 
     set valorVenda(valorVenda: number){
-        if(valorVenda == 0){
+        if(valorVenda <= 0){
             throw new Error("Valor da Venda invalido")
         }
         this._valorVenda = valorVenda
@@ -133,7 +133,7 @@ class PessoaJuridica extends Vendedores {
     }
 
     set totalFuncionarios(totalFuncionarios: number){
-        if(totalFuncionarios == 0){
+        if(totalFuncionarios <= 0){
             throw new Error("Total de Funcionarios incorreto")
         }
         this._totalFuncionarios = totalFuncionarios
